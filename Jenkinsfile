@@ -7,7 +7,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t hantach/myapp:$BUILD_NUMBER .'
+                sh 'docker build -t mboucheta/myapp:$BUILD_NUMBER .'
             }
         }
         stage('login to dockerhub') {
@@ -17,7 +17,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push hantach/myapp:$BUILD_NUMBER'
+                sh 'docker push mboucheta/myapp:$BUILD_NUMBER'
             }
         }
 }
